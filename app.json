@@ -2,6 +2,7 @@
   "expo": {
     "name": "my-project",
     "slug": "my-project",
+    "scheme": "myapp",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -19,10 +20,16 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.rainydayisbright.myproject"
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "042d0379-3e9d-47dd-8f35-5e2c97b4c589"
+      }
     }
   }
 }

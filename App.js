@@ -1,20 +1,41 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import * as React from "react";
+import { NavigationContainer } from "@react-navigation/native";
+import { createStackNavigator } from "@react-navigation/stack";
+import * as Linking from "expo-linking";
+import AllProcessing from "./screens/AllProcessing";
+import PickProcessing from "./screens/PickProcessing";
+import Navbar from "./components/Navbar";
 
-export default function App() {
+const Stack = createStackNavigator();
+
+const linking = {
+  prefixes: [Linking.createURL("/")],
+  config: {
+    screens: {
+      AllProcessing: "/",
+      PickProcessing: "/pick-processing",
+    },
+  },
+};
+
+function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <NavigationContainer linking={linking}>
+      <Stack.Navigator initialRouteName="AllProcessing">
+        {/* Navbar จะแสดงทุกหน้าเพราะใช้ใน options */}
+        <Stack.Screen 
+          name="AllProcessing" 
+          component={AllProcessing} 
+          options={{ header: () => <Navbar title="Beta Version" /> }} 
+        />
+        {/* <Stack.Screen 
+          name="PickProcessing" 
+          component={PickProcessing} 
+          options={{ header: () => <Navbar title="Pick Processing" /> }} 
+        /> */}
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+export default App;
