@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "my-project",
-    "slug": "my-project",
+    "name": "Car-Damage",
+    "slug": "Car-Damage",
     "scheme": "myapp",
     "version": "1.0.0",
     "orientation": "portrait",
@@ -19,16 +19,18 @@
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#ffffff"
+        "backgroundColor": "#ffffff",
+        "icon": "./assets/icon.png"
       },
       "package": "com.rainydayisbright.myproject"
     },
     "web": {
       "favicon": "./assets/favicon.png"
     },
+    "owner": "rainydayisbright",
     "extra": {
       "eas": {
-        "projectId": "042d0379-3e9d-47dd-8f35-5e2c97b4c589"
+        "projectId": "4513176c-6e33-424a-9751-64d2384c23af"
       }
     }
   }

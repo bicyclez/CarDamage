@@ -60,7 +60,6 @@ const Navbar = ({ title }) => {
 
 const styles = StyleSheet.create({
   container: {
-    position: "relative",
     zIndex: 100, // ให้ Navbar อยู่ด้านบนสุด
     marginTop: StatusBar.currentHeight || 0, // เพิ่ม margin ตาม StatusBar ของ Android
   },
@@ -102,6 +101,7 @@ const styles = StyleSheet.create({
   },
   overlay: {
     position: "absolute",
+    top: 0,
     left: 0,
     width: "100%",
     height: SCREEN_HEIGHT * 1,
